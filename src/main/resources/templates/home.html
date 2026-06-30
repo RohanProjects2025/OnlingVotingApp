@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Online Voting System</title>
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+	<header>
+
+		<nav class="navbar">
+
+			<a href="#" class="logo">
+				<i class="fa-solid fa-vote-yea"></i>
+				<span>VOTE</span>
+			</a>
+
+			<ul class="nav-links">
+				<li><a th:href="@{/}" class="active">Home</a></li>
+				<li><a th:href="@{/register}">Register</a></li>
+				<li><a th:href="@{/login}">Login</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+
+			<button class="theme-btn" id="themeBtn">
+				<i class="fa-solid fa-moon"></i>
+			</button>
+
+		</nav>
+
+	</header>
+
+	<!-- HERO SECTION -->
+
+	<section class="hero">
+
+		<div class="hero-text">
+
+			<h1>
+				Welcome to <br>
+				<span>Online Voting System</span>
+			</h1>
+
+			<p>
+				Your vote, your voice.<br>
+				Together, we build a better future.
+			</p>
+
+			<a href="register.html" class="btn">
+				Get Started
+				<i class="fa-solid fa-arrow-right"></i>
+			</a>
+
+		</div>
+
+		<div class="hero-image">
+
+			<img src="images/voting.png" alt="Voting">
+
+		</div>
+
+	</section>
+
+	<!-- FEATURES -->
+
+	<section class="features">
+
+		<div class="card">
+
+			<i class="fa-solid fa-lock"></i>
+
+			<h3>Secure</h3>
+
+			<p>
+				Your vote is encrypted and
+				completely secure.
+			</p>
+
+		</div>
+
+		<div class="card">
+
+			<i class="fa-solid fa-shield-halved"></i>
+
+			<h3>Easy to Use</h3>
+
+			<p>
+				Simple and intuitive interface
+				for everyone.
+			</p>
+
+		</div>
+
+		<div class="card">
+
+			<i class="fa-solid fa-circle-check"></i>
+
+			<h3>Transparent</h3>
+
+			<p>
+				Fair and transparent voting
+				process for all.
+			</p>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			© 2026 Online Voting System | All Rights Reserved
+		</p>
+
+	</footer>
+
+
+</body>
+
+</html>

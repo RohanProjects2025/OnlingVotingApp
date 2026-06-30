@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{user/base::layout(~{::section})}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<section class="center">
+
+		<div th:if=${session.vmsg}>
+			<div  class="vote-card">
+			<h2 style="color:rgb(38 170 38)">Successfully Voted</h2>
+							<img src="images/Votedone.png" class="vote-done">
+			<p>Thank you for voting!</p>
+			</div>
+		</div>
+
+		<div th:unless=${session.vmsg}>
+			<div th:if="${user.status}"  class="vote-card1">
+				<h2>You are already Voted</h2>
+				<img src="images/Votedone.png" class="vote-done">
+				<!--<div class="success-icon">
+					
+				</div>-->
+			</div>
+		</div>
+
+		<div th:unless=${user.status} class="vote-card">
+
+			<h2>Please Cast Your Vote</h2>
+
+			<form th:action="@{/addcandidate}" id="voteForm" method="post">
+				<h3 style="margin-bottom: 10px;">Choose your candidate</h3>
+
+				<label>
+					<input type="radio" name="candidate" value="Candidate1">
+					Candidate 1
+				</label>
+
+				<label>
+					<input type="radio" name="candidate" value="Candidate2">
+					Candidate 2
+				</label>
+
+				<label>
+					<input type="radio" name="candidate" value="Candidate3">
+					Candidate 3
+				</label>
+
+				<label>
+					<input type="radio" name="candidate" value="Candidate4">
+					Candidate 4
+				</label>
+
+				<input type="submit" value="Vote" class="vote-btn">
+				</input>
+
+			</form>
+
+		</div>
+	</section>
+
+
+</body>
+
+</html>

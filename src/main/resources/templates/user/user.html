@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>User Dashboard</title>
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+	<header>
+
+		<nav class="navbar">
+
+			<a href="index.html" class="logo">
+				<i class="fa-solid fa-vote-yea"></i>
+				<span>VOTE</span>
+			</a>
+
+			<ul class="nav-links">
+				<li><a href="#">Home</a></li>
+				<li><a href="#" class="active">Welcome <span th:text="${user.name}"></span></a></li>
+				<li><a th:href="@{/logout}" style="color:red">Logout</a></li>
+			</ul>
+
+		</nav>
+
+	</header>
+
+	<section class="user-section">
+
+		<div class="user-container">
+
+			<!-- USER DETAILS -->
+
+			<div class="profile-card">
+
+				<h2>User Details</h2>
+
+				<div class="profile-top">
+
+					<div class="avatar">
+						<i class="fa-solid fa-user"></i>
+					</div>
+
+					<table>
+
+						<tr>
+							<td>Name</td>
+							<td th:text="${user.name}"></td>
+						</tr>
+
+						<tr>
+							<td>Email</td>
+							<td th:text="${user.email}"></td>
+						</tr>
+
+						<tr>
+							<td>Phone</td>
+							<td th:text="${user.phoneno}"></td>
+						</tr>
+
+						<tr>
+							<td>Status</td>
+							<td>
+								<div th:if=${user.status}>
+									<h4 th:text="${user.status}" style="color:green"></h4>
+								</div>
+								<div th:unless=${user.status}>
+									<h4 style="color:red">Not Voted</h4>
+								</div>
+							</td>
+						</tr>
+
+					</table>
+
+				</div>
+
+			</div>
+
+			<!-- VOTING CARD -->
+
+			<div class="content-panel">
+
+				<!-- STATE 1: USER - VOTE SUCCESS (Shown only right after casting vote) -->
+				<div th:if="${justVoted}" class="success-card">
+					<div class="alert-banner success-text">Successfully Voted</div>
+					<div class="success-icon">
+						<i class="fa-solid fa-circle-check"></i>
+					</div>
+					<h3>Thank you for voting!</h3>
+				</div>
+
+				<!-- STATE 2: USER - DASHBOARD (ALREADY VOTED) (Voted, but not in a 'just voted' redirect flash context) -->
+				<div th:if="${user.voted and justVoted == null}" class="already-voted-card">
+					<div class="alert-banner info-text">You are already Voted</div>
+					<div class="success-icon static-check">
+						<i class="fa-solid fa-circle-check"></i>
+					</div>
+				</div>
+
+				<!-- STATE 3: USER - BEFORE VOTING (Default state if user has never voted) -->
+				<div th:unless="${user.voted}" class="vote-form-card">
+					<h3>Please Cast Your Vote</h3>
+					<p class="subtitle">Choose Your Candidate</p>
+
+					<form th:action="@{/user/submit-vote}" method="POST" id="voteForm">
+						<div class="radio-group">
+							<label>
+								<input type="radio" name="candidateName" value="Candidate 1" required>
+								<span>Candidate 1</span>
+							</label>
+							<label>
+								<input type="radio" name="candidateName" value="Candidate 2">
+								<span>Candidate 2</span>
+							</label>
+							<label>
+								<input type="radio" name="candidateName" value="Candidate 3">
+								<span>Candidate 3</span>
+							</label>
+							<label>
+								<input type="radio" name="candidateName" value="Candidate 4">
+								<span>Candidate 4</span>
+							</label>
+						</div>
+						<button type="submit" class="vote-submit-btn">Vote</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+</html>
