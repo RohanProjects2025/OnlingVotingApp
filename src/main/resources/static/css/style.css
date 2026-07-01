@@ -460,8 +460,8 @@ footer{
     justify-content:center;
     align-items:center;
     padding:60px 20px;
-    background:#fafbff;
-    zoom: 85%;
+    zoom: 83%;
+	background: rgb(243, 243, 243);
 }
 
 .register-container{
@@ -600,7 +600,7 @@ footer{
 .user-section{
 padding:50px 20px;
 min-height:85vh;
-background:#f8f9ff;
+background: rgb(243, 243, 243);
 }
 
 .user-container{
@@ -632,7 +632,7 @@ gap:25px;
 }
 
 .avatar{
-width:120px;
+width:130px;
 height:100px;
 border-radius:50%;
 

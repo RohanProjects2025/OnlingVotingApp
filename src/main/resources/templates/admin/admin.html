@@ -7,11 +7,98 @@
 
 	<title>User Dashboard</title>
 
-	<link rel="stylesheet" href="css/style.css">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	
 	<style>
+		
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+		*{
+		    margin:0;
+		    padding:0;
+		    box-sizing:border-box;
+		    font-family:'Poppins',sans-serif;
+		}
+
+		html{
+		    scroll-behavior:smooth;
+		}
+
+		body{
+		    /* background:#f8f9ff; */
+		    background: rgb(243, 243, 243);
+		    color:#222;
+		}
+
+		/* ===========================
+		   NAVBAR
+		=========================== */
+
+		header{
+		    width:100%;
+		    background:#fff;
+		    box-shadow:0 2px 15px rgba(0,0,0,.08);
+		    position:sticky;
+		    top:0;
+		    z-index:1000;
+		}
+
+		.navbar{
+		    max-width:1200px;
+		    margin:auto;
+		    padding:18px 20px;
+		    display:flex;
+		    justify-content:space-between;
+		    align-items:center;
+		}
+
+		.logo{
+		    display:flex;
+		    align-items:center;
+		    gap:10px;
+		    text-decoration:none;
+		}
+
+		.logo i{
+		    font-size:30px;
+		    color:#6a11cb;
+		}
+
+		.logo span{
+		    font-size:30px;
+		    font-weight:700;
+		    color:#2d2df5;
+		}
+
+		.nav-links{
+		    display:flex;
+		    list-style:none;
+		    gap:35px;
+		}
+
+		.nav-links a{
+		    text-decoration:none;
+		    color:#222;
+		    font-weight:500;
+		    transition:.3s;
+		}
+
+		.nav-links a:hover,
+		.nav-links .active{
+		    color:#6a11cb;
+		}
+
+		.theme-btn{
+		    width:45px;
+		    height:45px;
+		    border-radius:50%;
+		    border:none;
+		    background:#f0e8ff;
+		    cursor:pointer;
+		    color:#6a11cb;
+		    font-size:20px;
+		}
+
 
 	        /* Main Dashboard Content */
 	        .dashboard-container {
