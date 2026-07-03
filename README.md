@@ -1,5 +1,3 @@
-# OnlingVotingApp
-
 
 # 🗳️ Online Voting System
 
