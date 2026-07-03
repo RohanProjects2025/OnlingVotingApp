@@ -1,51 +1,69 @@
 
-function togglePassword(){
+document.addEventListener("DOMContentLoaded", function() {
 
-const password =
-document.getElementById("password");
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-const eye =
-document.querySelector(".toggle-password");
+    navLinks.forEach(link => {
+        if (link.href == window.location.href) {
+            link.classList.add('active');
+        }
+		
+		link.addEventListener('click',function(){
+			navLinks.forEach(item => item.classList.remove('active'));
+			this.classList.add('active');
+		});
+    });
+    
+});
 
-if(password.type==="password"){
 
-password.type="text";
+function togglePassword() {
 
-eye.classList.remove("fa-eye");
-eye.classList.add("fa-eye-slash");
+    const password =
+        document.getElementById("password");
 
-}else{
+    const eye =
+        document.querySelector(".toggle-password");
 
-password.type="password";
+    if (password.type === "password") {
 
-eye.classList.remove("fa-eye-slash");
-eye.classList.add("fa-eye");
+        password.type = "text";
 
+        eye.classList.remove("fa-eye");
+        eye.classList.add("fa-eye-slash");
+
+    } else {
+
+        password.type = "password";
+
+        eye.classList.remove("fa-eye-slash");
+        eye.classList.add("fa-eye");
+
+    }
 }
-}
 
 
-function toggleRegisterPassword(){
+function toggleRegisterPassword() {
 
-const password =
-document.getElementById("registerPassword");
+    const password =
+        document.getElementById("registerPassword");
 
-const icon =
-document.querySelector(".password-box i");
+    const icon =
+        document.querySelector(".password-box i");
 
-if(password.type==="password"){
+    if (password.type === "password") {
 
-password.type="text";
+        password.type = "text";
 
-icon.classList.remove("fa-eye");
-icon.classList.add("fa-eye-slash");
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
 
-}else{
+    } else {
 
-password.type="password";
+        password.type = "password";
 
-icon.classList.remove("fa-eye-slash");
-icon.classList.add("fa-eye");
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
 
-}
+    }
 }

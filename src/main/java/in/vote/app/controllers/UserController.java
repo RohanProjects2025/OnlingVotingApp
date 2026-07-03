@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import in.vote.app.entities.User;
 import in.vote.app.service.UserService;
@@ -18,17 +19,15 @@ public class UserController {
 	private UserService userServ;
 
 	@PostMapping("/createuser")
-	public String createUser(@ModelAttribute User user, HttpSession session) {
+	public String createUser(@ModelAttribute User user, HttpSession session, RedirectAttributes redirectAttributes) {
 		String email = user.getEmail();
 		
 		if (userServ.getUserByEmail(email) != null) {
-			session.setAttribute("fail", "Registration Failed, Please try different Email Id");
-			session.removeAttribute("success");
+			redirectAttributes.addFlashAttribute("fail", "Registration Failed, Please try different Email Id");
 			return "redirect:/register";
 		} else {
 			userServ.addUser(user);
-			session.setAttribute("success", "Registration Successful");
-			session.removeAttribute("fail");
+			redirectAttributes.addFlashAttribute("success", "Registration Successful");
 			return "redirect:/register";
 		}
 		

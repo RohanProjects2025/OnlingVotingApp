@@ -24,15 +24,15 @@
 			</a>
 
 			<ul class="nav-links">
-				<li><a th:href="@{/}" class="active">Home</a></li>
+				<li><a th:href="@{/}">Home</a></li>
 				<li><a th:href="@{/register}">Register</a></li>
 				<li><a th:href="@{/login}">Login</a></li>
-				<li><a href="#">About</a></li>
+				<!--<li><a href="#">About</a></li>-->
 			</ul>
 
-			<button class="theme-btn" id="themeBtn">
-				<i class="fa-solid fa-moon"></i>
-			</button>
+			<!-- 			<button class="theme-btn" id="themeBtn">
+							<i class="fa-solid fa-moon"></i>
+						</button>-->
 
 		</nav>
 
@@ -54,7 +54,7 @@
 				Together, we build a better future.
 			</p>
 
-			<a href="register.html" class="btn">
+			<a th:href="@{/register}" class="btn">
 				Get Started
 				<i class="fa-solid fa-arrow-right"></i>
 			</a>
@@ -121,6 +121,9 @@
 		</p>
 
 	</footer>
+	
+	
+	<script src="js/script.js"></script>
 
 
 </body>

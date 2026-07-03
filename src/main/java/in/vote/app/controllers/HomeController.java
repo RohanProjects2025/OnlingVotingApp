@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import in.vote.app.entities.User;
 import in.vote.app.service.UserService;
@@ -33,17 +34,15 @@ public class HomeController {
 	
 	@PostMapping("/dologin")
 	public String doLogin(@RequestParam String email, @RequestParam String password, 
-			              HttpSession session) {
+			              HttpSession session, RedirectAttributes redirectAttributes) {
 		User user = userServ.getUserByEmail(email);
 		
 		if(user == null) {
-			session.setAttribute("msg", "Invalid Email");
-			session.removeAttribute("msg1");
+			redirectAttributes.addFlashAttribute("msg", "Invalid Email");
 			return "redirect:/login";
 		}
 		if(!user.getPassword().equals(password)) {
-			session.setAttribute("msg1", "Invalid Password");
-			session.removeAttribute("msg");
+			redirectAttributes.addFlashAttribute("msg", "Invalid Password");
 			return "redirect:/login";
 		}
 		session.setAttribute("loggedUser", user);

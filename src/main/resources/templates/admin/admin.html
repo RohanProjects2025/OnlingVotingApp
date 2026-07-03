@@ -83,9 +83,10 @@
 		    transition:.3s;
 		}
 
-		.nav-links a:hover,
 		.nav-links .active{
 		    color:#6a11cb;
+			border-bottom: 2px solid #0056b3;
+			padding: 15px 15px 15px 15px;
 		}
 
 		.theme-btn{
@@ -199,7 +200,6 @@
 			</a>
 
 			<ul class="nav-links">
-				<li><a href="#">Home</a></li>
 				<li><a href="#" class="active">Welcome admin</a></li>
 				<li><a th:href="@{/logout}" style="color:red">Logout</a></li>
 			</ul>

@@ -25,15 +25,14 @@
 				</img></a>-->
 
 			<ul class="nav-links">
-				<li><a th:href="@{/}" class="active">Home</a></li>
+				<li><a th:href="@{/}">Home</a></li>
 				<li><a th:href="@{/register}">Register</a></li>
 				<li><a th:href="@{/login}">Login</a></li>
-				<li><a href="#">About</a></li>
 			</ul>
 
-			<button class="theme-btn" id="themeBtn">
-				<i class="fa-solid fa-moon"></i>
-			</button>
+			<!-- 			<button class="theme-btn" id="themeBtn">
+										<i class="fa-solid fa-moon"></i>
+									</button>-->
 
 		</nav>
 
@@ -55,7 +54,7 @@
 				</p>
 
 				<div class="register-illustration">
-					<i class="fa-solid fa-clipboard-check"></i>
+					<img src="images/register.png" alt="">
 				</div>
 
 			</div>
@@ -64,12 +63,12 @@
 
 			<div class="register-card">
 
-				<div th:if="${session.fail}">
-					<h3 th:text="${session.fail}" style="color:red"></h3>
+				<div th:if="${fail}">
+					<h3 th:text="${fail}" style="color:red; text-align:center"></h3>
 				</div>
 
-				<div th:if="${session.success}">
-					<h3 th:text="${session.success}" style="color:green"></h3>
+				<div th:if="${success}">
+					<h3 th:text="${success}" style="color:green; text-align: center;"></h3>
 				</div>
 
 				<form th:action="@{/createuser}" method="post">
