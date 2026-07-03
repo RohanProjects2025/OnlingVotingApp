@@ -11,43 +11,43 @@ A modern **Online Voting System** built using **Java Spring Boot, Thymeleaf, MyS
 
 ### 🏠 Home Page
 
-![Home](screenshots/home.png)
+![Home](screenshots/home.PNG)
 
 ---
 
 ### 📝 User Registration
 
-![Register](screenshots/register.png)
+![Register](screenshots/register.PNG)
 
 ---
 
 ### 🔐 User Login
 
-![Login](screenshots/login.png)
+![Login](screenshots/login.PNG)
 
 ---
 
 ### 🗳️ User Voting Dashboard
 
-![Voting Dashboard](screenshots/user-dashboard.png)
+![Voting Dashboard](screenshots/user-dashboard.PNG)
 
 ---
 
 ### ✅ Vote Successfully Submitted
 
-![Vote Success](screenshots/vote-success.png)
+![Vote Success](screenshots/vote-success.PNG)
 
 ---
 
 ### ☑️ Already Voted Page
 
-![Already Voted](screenshots/already-voted.png)
+![Already Voted](screenshots/already-voted.PNG)
 
 ---
 
 ### 👨‍💼 Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](screenshots/admin-dashboard.PNG)
 
 ---
 
