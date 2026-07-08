@@ -279,10 +279,10 @@ Logout
 Java Full Stack Developer
 
 GitHub:
-https://github.com/RohanProjects2025
+https://github.com/MadaneRohan
 
 Portfolio:
-https://rohanprojects2025.github.io/MyPortfolio/
+https://madanerohan.github.io/MyPortfolio/
 
 ---
 
